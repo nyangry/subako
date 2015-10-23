@@ -1,2 +1,2 @@
 # subako
-Improve accessibility for esa posts.
+This extension provides fast access for esa posts.

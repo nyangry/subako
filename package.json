@@ -1,7 +1,7 @@
 {
   "name": "subako",
   "version": "0.1.0",
-  "description": "Improve accessibility for esa posts.",
+  "description": "This extension provides fast access for esa posts.",
   "dependencies": {
     "gulp": "^3.9.0"
   },
