@@ -1,0 +1,22 @@
+{
+  "name": "subako",
+  "version": "1.0",
+  "description": "Improve accessibility for esa posts.",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nyangry/subako.git"
+  },
+  "author": "Daisuke Masuyama <iacta.alea.esto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nyangry/subako/issues"
+  },
+  "homepage": "https://github.com/nyangry/subako"
+}
