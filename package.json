@@ -9,6 +9,7 @@
     "bootflat": "^2.0.4",
     "gulp": "^3.9.0",
     "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
     "gulp-jade": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.0.4",
