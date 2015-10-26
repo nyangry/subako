@@ -8,3 +8,56 @@ var browserSync = require('browser-sync').create();
 
 var dist = './dist';
 var src  = './src';
+
+// sync browser
+gulp.task('browser-sync', function() {
+  browserSync.init({
+    server: {
+      baseDir: 'dist',
+      index: 'popup.html'
+    }
+  });
+});
+
+// reload browser
+gulp.task('reload', function () {
+  browserSync.reload();
+});
+
+// default task
+gulp.task('default', ['browser-sync'], function () {
+  gulp.watch('dist/*.html', ['reload']);
+  gulp.watch('dist/*.css', ['reload']);
+  gulp.watch('dist/*.js', ['reload']);
+});
+
+// copy bootflat files into src
+
+// convert jade to html
+gulp.task('jade', function() {
+  gulp.src('./src/jade/*.jade')
+    .pipe(jade())
+    .pipe(gulp.dest('./dist/'));
+});
+
+// convert sass to css
+
+// concat css
+
+// minify css
+
+// minify and concat js
+gulp.task('js', function() {
+  gulp.src([
+    './node_modules/bootflat/js/bootstrap.min.js'
+  ])
+  .pipe(uglify({
+    preserveComments: 'some'
+  }))
+  .pipe(concat('app.js'))
+  .pipe(gulp.dest('dist/js'));
+});
+
+// convert and minify and distribution into dist
+
+// watch src
