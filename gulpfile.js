@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var browserify  = require('gulp-browserify');
 var jade        = require('gulp-jade');
+var minifyCss   = require('gulp-minify-css');
 var uglify      = require('gulp-uglify');
 var concat      = require('gulp-concat');
 var rename      = require('gulp-rename');
@@ -43,9 +44,15 @@ gulp.task('jade', function() {
 
 // convert sass to css
 
-// concat css
-
-// minify css
+// minify and concat css
+gulp.task('css', function() {
+  gulp.src([
+    './node_modules/bootflat/bootflat/css/bootflat.min.css'
+  ])
+  .pipe(minifyCss())
+  .pipe(concat('app.css'))
+  .pipe(gulp.dest('dist/css'));
+});
 
 // minify and concat js
 gulp.task('js', function() {
