@@ -53,7 +53,7 @@ gulp.task('js', function() {
     './node_modules/bootflat/js/bootstrap.min.js'
   ])
   .pipe(uglify({
-    preserveComments: 'some'
+    preserveComments: 'license'
   }))
   .pipe(concat('app.js'))
   .pipe(gulp.dest('dist/js'));
