@@ -9,9 +9,17 @@ var browserSync = require('browser-sync').create();
 var dist = './dist';
 var src  = './src';
 
+// default task
+gulp.task('default', ['browser-sync'], function () {
+  gulp.watch('dist/*.html', ['reload']);
+  gulp.watch('dist/*.css', ['reload']);
+  gulp.watch('dist/*.js', ['reload']);
+});
+
 // sync browser
 gulp.task('browser-sync', function() {
   browserSync.init({
+    port: 8080,
     server: {
       baseDir: 'dist',
       index: 'popup.html'
@@ -22,13 +30,6 @@ gulp.task('browser-sync', function() {
 // reload browser
 gulp.task('reload', function () {
   browserSync.reload();
-});
-
-// default task
-gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('dist/*.html', ['reload']);
-  gulp.watch('dist/*.css', ['reload']);
-  gulp.watch('dist/*.js', ['reload']);
 });
 
 // copy bootflat files into src
