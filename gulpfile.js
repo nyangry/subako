@@ -1,6 +1,7 @@
 var gulp        = require('gulp');
 var browserify  = require('gulp-browserify');
 var jade        = require('gulp-jade');
+var sass        = require('gulp-sass');
 var minifyCss   = require('gulp-minify-css');
 var uglify      = require('gulp-uglify');
 var concat      = require('gulp-concat');
