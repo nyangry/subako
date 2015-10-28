@@ -38,11 +38,13 @@ gulp.task('reload', function () {
 // convert jade to html
 gulp.task('jade', function() {
   gulp.src('./src/jade/*.jade')
-    .pipe(jade())
-    .pipe(gulp.dest('./dist/'));
+  .pipe(jade())
+  .pipe(gulp.dest('./dist/'));
 });
 
 // convert sass to css
+gulp.task('convert-sass', function() {
+});
 
 // minify and concat css
 gulp.task('css', function() {
