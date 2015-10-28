@@ -12,10 +12,10 @@ var dist = './dist';
 var src  = './src';
 
 // default task
-gulp.task('default', ['browser-sync'], function () {
-  gulp.watch('dist/*.html', ['reload']);
-  gulp.watch('dist/*.css', ['reload']);
-  gulp.watch('dist/*.js', ['reload']);
+gulp.task('default', ['browser-sync', 'jade', 'sass', 'css', 'fonts', 'js'], function () {
+  gulp.watch('src/jade/*.jade', ['jade', 'reload']);
+  gulp.watch('src/css/*.scss', ['sass', 'css', 'reload']);
+  gulp.watch('src/js/*.js', ['js', 'reload']);
 });
 
 // sync browser
@@ -34,33 +34,44 @@ gulp.task('reload', function () {
   browserSync.reload();
 });
 
-// copy bootflat files into src
-
 // convert jade to html
 gulp.task('jade', function() {
-  gulp.src('./src/jade/*.jade')
+  gulp.src('src/jade/*.jade')
   .pipe(jade())
-  .pipe(gulp.dest('./dist/'));
+  .pipe(gulp.dest('dist'));
 });
 
 // convert sass to css
-gulp.task('convert-sass', function() {
+gulp.task('sass', function() {
+  gulp.src('src/css/*.scss')
+  .pipe(sass().on('error', sass.logError))
+  .pipe(gulp.dest('src/css'));
 });
 
 // minify and concat css
 gulp.task('css', function() {
   gulp.src([
-    './node_modules/bootflat/bootflat/css/bootflat.min.css'
+    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    'node_modules/bootflat/bootflat/css/bootflat.min.css',
+    'src/css/style.css'
   ])
   .pipe(minifyCss())
   .pipe(concat('app.css'))
   .pipe(gulp.dest('dist/css'));
 });
 
+// copy fonts into dist/fonts
+gulp.task('fonts', function() {
+  gulp.src('node_modules/bootstrap/dist/fonts/**')
+  .pipe(gulp.dest('dist/fonts'));
+});
+
 // minify and concat js
 gulp.task('js', function() {
   gulp.src([
-    './node_modules/bootflat/js/bootstrap.min.js'
+    'node_modules/bootflat/js/jquery-1.10.1.min.js',
+    'node_modules/bootstrap/js/transition.js',
+    'node_modules/bootstrap/js/tab.js'
   ])
   .pipe(uglify({
     preserveComments: 'license'
@@ -70,5 +81,3 @@ gulp.task('js', function() {
 });
 
 // convert and minify and distribution into dist
-
-// watch src
