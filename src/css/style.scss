@@ -1,0 +1,38 @@
+$LIGHT-GREEN: #2ABB9B;
+$DARK-GREEN: #16A085;
+
+body {
+  width: 450px;
+}
+
+.nav-tabs {
+  background-color: $DARK-GREEN;
+
+  li {
+    border-left: 1px solid rgba(0,0,0,0.05);
+    width: 150px;
+
+    a, a:hover, a:focus {
+      text-align: center;
+      color: white;
+      background-color: $DARK-GREEN;
+
+      i {
+        display: block;
+        font-size: 26px;
+        padding-bottom: 3px;
+      }
+    }
+
+    &.active {
+      a, a:hover, a:focus {
+        color: white;
+        background-color: $LIGHT-GREEN !important;
+      }
+    }
+  }
+}
+
+.list {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}

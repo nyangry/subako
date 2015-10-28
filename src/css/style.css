@@ -1,0 +1,22 @@
+body {
+  width: 450px; }
+
+.nav-tabs {
+  background-color: #16A085; }
+  .nav-tabs li {
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+    width: 150px; }
+    .nav-tabs li a, .nav-tabs li a:hover, .nav-tabs li a:focus {
+      text-align: center;
+      color: white;
+      background-color: #16A085; }
+      .nav-tabs li a i, .nav-tabs li a:hover i, .nav-tabs li a:focus i {
+        display: block;
+        font-size: 26px;
+        padding-bottom: 3px; }
+    .nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+      color: white;
+      background-color: #2ABB9B !important; }
+
+.list {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
