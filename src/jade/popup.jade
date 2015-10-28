@@ -6,4 +6,30 @@ html
     script(src='./js/app.js', charset='UTF-8')
 
   body
-    | test
+
+    div
+
+      ul.nav.nav-tabs
+        li.active
+          a(href='#bookmarks' data-toggle='tab')
+            i.glyphicon.glyphicon-th-list
+            span bookmarks
+        li
+          a(href='#posts' data-toggle='tab')
+            i.glyphicon.glyphicon-list
+            span posts
+        li
+          a(href='#reports' data-toggle='tab')
+            i.glyphicon.glyphicon-list-alt
+            span reports
+
+      .tab-content
+
+        #bookmarks.tab-pane.fade.active.in
+          | bookmarks
+
+        #posts.tab-pane.fade
+          | posts
+
+        #reports.tab-pane.fade
+          | reports
