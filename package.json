@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "This extension provides fast access for esa posts.",
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "lodash.throttle": "^3.0.4"
   },
   "devDependencies": {
     "bootflat": "^2.0.4",
