@@ -14,7 +14,7 @@ body {
 
     a, a:hover, a:focus {
       text-align: center;
-      color: white;
+      color: rgba(0,0,0,0.3);
       background-color: $DARK-GREEN;
 
       i {
@@ -28,6 +28,10 @@ body {
       a, a:hover, a:focus {
         color: white;
         background-color: $LIGHT-GREEN !important;
+
+        i {
+          color: rgba(255,255,255,0.5);
+        }
       }
     }
   }
