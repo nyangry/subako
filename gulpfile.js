@@ -8,9 +8,6 @@ var concat      = require('gulp-concat');
 var rename      = require('gulp-rename');
 var browserSync = require('browser-sync').create();
 
-var dist = './dist';
-var src  = './src';
-
 // default task
 gulp.task('default', ['browser-sync', 'jade', 'sass', 'css', 'fonts', 'js'], function () {
   gulp.watch('src/jade/*.jade', ['jade', 'reload']);
