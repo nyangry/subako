@@ -1,5 +1,10 @@
+@charset "UTF-8";
 body {
-  width: 450px; }
+  width: 450px;
+  font-family: "Lato", Arial, "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; }
+
+.btn i {
+  margin-right: 5px; }
 
 .nav-tabs {
   background-color: #16A085; }
@@ -20,5 +25,40 @@ body {
       .nav-tabs li.active a i, .nav-tabs li.active a:hover i, .nav-tabs li.active a:focus i {
         color: rgba(255, 255, 255, 0.5); }
 
-.list {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+.nopadding {
+  padding: 0; }
+
+.nomargin {
+  margin: 0; }
+
+.bookmark-actions {
+  margin-bottom: 10px;
+  text-align: left; }
+  .bookmark-actions .bookmark-search {
+    display: inline-block;
+    width: 60%; }
+  .bookmark-actions button {
+    width: 30%;
+    float: right; }
+
+.subako-list {
+  list-style: none; }
+  .subako-list li {
+    height: 45px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer; }
+    .subako-list li span.link-title {
+      width: 50%;
+      max-width: 50%; }
+    .subako-list li span.link-url {
+      width: 30%;
+      max-width: 30%; }
+    .subako-list li span.link-title,
+    .subako-list li span.link-url {
+      display: inline-block;
+      margin-right: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 18px; }

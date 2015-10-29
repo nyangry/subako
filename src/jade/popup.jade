@@ -26,7 +26,27 @@ html
       .tab-content
 
         #bookmarks.tab-pane.fade.active.in
-          | bookmarks
+
+          .bookmark-actions.text-center
+            .bookmark-search.form-search.search-only.js-bookmark-search
+              i.search-icon.glyphicon.glyphicon-search
+              input(type='text' class='form-control search-query')
+
+            button.btn.btn-info.js-add-bookmark
+              i.glyphicon.glyphicon-pencil
+              span Add
+
+          ul.subako-list.nopadding
+            li.js-bookmark-open
+              button(type='button' class='close' data-dismiss='alert' aria-hidden='true') ×
+              span.link-title 給与 仕様
+              span.link-url https://mf.esa.io/posts?hoge=fuga&piyo=hoge
+
+
+            li.js-bookmark-open
+              button(type='button' class='close' data-dismiss='alert' aria-hidden='true') ×
+              span.link-title チーム紹介一覧
+              span.link-url https://mf.esa.io/posts?hoge=fuga&piyo=hoge
 
         #posts.tab-pane.fade
           | posts

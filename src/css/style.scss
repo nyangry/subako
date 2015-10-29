@@ -1,8 +1,27 @@
 $LIGHT-GREEN: #2ABB9B;
 $DARK-GREEN: #16A085;
 
+@mixin mr-5 {
+  margin-right: 5px;
+}
+
+@mixin mr-10 {
+  margin-right: 10px;
+}
+
+@mixin mb-10 {
+  margin-bottom: 10px;
+}
+
 body {
   width: 450px;
+  font-family: "Lato", Arial, "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+}
+
+.btn {
+  i {
+    @include mr-5;
+  }
 }
 
 .nav-tabs {
@@ -37,6 +56,56 @@ body {
   }
 }
 
-.list {
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+.nopadding {
+  padding: 0;
+}
+
+.nomargin {
+  margin: 0;
+}
+
+.bookmark-actions {
+  @include mb-10;
+  text-align: left;
+
+  .bookmark-search {
+    display: inline-block;
+    width: 60%;
+  }
+
+  button {
+    width: 30%;
+    float: right;
+  }
+}
+
+.subako-list {
+  list-style: none;
+
+  li {
+    height: 45px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    cursor: pointer;
+
+    span.link-title {
+      width: 50%;
+      max-width: 50%;
+    }
+
+    span.link-url {
+      width: 30%;
+      max-width: 30%;
+    }
+
+    span.link-title,
+    span.link-url {
+      display: inline-block;
+      @include mr-10;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 18px;
+    }
+  }
 }
